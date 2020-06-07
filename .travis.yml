@@ -1,21 +1,25 @@
-language: java
+langauge: java
 
-# explicit distribution specification
-# to use xvfb as a service
 dist: xenial
 
 jdk: openjdk8
 
 services:
-   - docker
-   - xvfb
+  - docker
+  - xvfb
 
-# skip installation step
+adddons:
+  sonarcloud:
+    organization: "jasonravagli"
+    token:
+      secure: $SONAR_TOKEN
+
 install: true
 
 cache:
-   directories:
-      - $HOME/.m2
+  directories:
+    - $HOME/.m2
+    - $HOME/.sonar/cache
 
 script:
-   - mvn -f com.examples.school/pom.xml clean verify
+  - mvn -f com.examples.school/pom.xml -Pjacoco clean verify sonar:sonar
