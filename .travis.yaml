@@ -1,0 +1,25 @@
+langauge: java
+
+dist: xenial
+
+jdk: openjdk8
+
+services:
+  - docker
+  - xvfb
+
+adddons:
+  sonarcloud:
+    organization: "jasonravagli-github"
+    token:
+      secure: $SONAR_TOKEN
+
+install: true
+
+cache:
+  directories:
+    - $HOME/.m2
+    - $HOME/.sonar/cache
+
+script:
+  - mvn -f com.examples.school/pom.xml -Pjacoco clean verify sonar:sonar
