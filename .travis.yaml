@@ -10,7 +10,7 @@ services:
 
 adddons:
   sonarcloud:
-    organization: "jasonravagli"
+    organization: "jasonravagli-github"
     token:
       secure: $SONAR_TOKEN
 
