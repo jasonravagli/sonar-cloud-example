@@ -10,8 +10,9 @@ services:
 
 adddons:
   sonarcloud:
-    organization: jasonravagli
-    token: $SONAR_TOKEN
+    organization: "jasonravagli-github"
+    token:
+      secure: $SONAR_TOKEN
 
 install: true
 

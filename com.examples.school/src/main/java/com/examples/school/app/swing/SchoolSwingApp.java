@@ -44,7 +44,7 @@ public class SchoolSwingApp implements Callable<Void> {
 				studentView.setVisible(true);
 				schoolController.allStudents();
 			} catch (Exception e) {
-
+				e.printStackTrace();
 			}
 		});
 		return null;
