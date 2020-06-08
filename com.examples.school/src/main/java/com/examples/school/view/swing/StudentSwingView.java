@@ -42,24 +42,7 @@ public class StudentSwingView extends JFrame implements StudentView {
 
 	private DefaultListModel<Student> listStudentsModel;
 
-	private SchoolController schoolController;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			@Override
-			public void run() {
-				try {
-					StudentSwingView frame = new StudentSwingView();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private transient SchoolController schoolController;
 
 	DefaultListModel<Student> getListStudentsModel() {
 		return listStudentsModel;
